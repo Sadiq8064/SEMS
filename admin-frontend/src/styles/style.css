@@ -1,0 +1,573 @@
+/* PREMIUM DARK NEON THEME */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Ultra Dark Base */
+    --bg-primary: #030712;
+    /* Deepest Void */
+    --bg-secondary: #0f172a;
+    --bg-card: rgba(17, 24, 39, 0.7);
+    /* Translucent Dark */
+
+    --text-primary: #f8fafc;
+    --text-secondary: #64748b;
+
+    /* Neon Accents */
+    --accent-color: #3b82f6;
+    --accent-glow: rgba(59, 130, 246, 0.5);
+
+    --glass-bg: rgba(10, 10, 10, 0.7);
+    --glass-border: rgba(255, 255, 255, 0.15);
+
+    --font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Role-Specific Neon Themes */
+/* Role-Specific Neon Themes */
+.theme-student {
+    --accent-color: #a855f7;
+    /* Violet/Purple */
+    /* Neon Violet */
+    --accent-glow: rgba(168, 85, 247, 0.5);
+    --bg-primary: #0a0118;
+    /* Deep Purple Void */
+}
+
+/* ... (keep other themes same) ... */
+
+/* Professional Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    /* Darker backdrop for better isolation */
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: rgba(15, 23, 42, 0.95);
+    /* Solid dark background to prevent mixing */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* Crisper border */
+    width: 100%;
+    max-width: 550px;
+    /* Slightly narrower */
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 1),
+        /* Sharp inner black line */
+        0 25px 50px -12px rgba(0, 0, 0, 0.8),
+        0 0 30px -10px var(--accent-glow);
+    /* Outer glow of theme color */
+    border-radius: 1.5rem;
+    padding: 2rem;
+    animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Compact form elements inside modal */
+.modal-content label {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+}
+
+.modal-content input,
+.modal-content select {
+    padding: 0.75rem 1rem;
+    /* Smaller padding */
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.theme-faculty {
+    --accent-color: #2979ff;
+    /* Neon Blue */
+    --accent-glow: rgba(41, 121, 255, 0.4);
+    --bg-primary: #020617;
+}
+
+.theme-admin {
+    --accent-color: #ff9100;
+    /* Neon Orange */
+    --accent-glow: rgba(255, 145, 0, 0.4);
+    --bg-primary: #0b0500;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--bg-primary);
+    /* Subtle animated ambient background */
+    background-image:
+        radial-gradient(circle at 15% 50%, rgba(var(--accent-color), 0.08) 0%, transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 25%);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.75rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+}
+
+p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+/* Glass Cards - Sleek & Compact */
+/* Glass Cards - Sleek & Compact */
+.card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--accent-color);
+    box-shadow:
+        0 20px 50px -20px rgba(0, 0, 0, 0.7),
+        0 0 25px -5px var(--accent-glow),
+        /* Neon Glow */
+        inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+    /* Inner Highlight */
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.85) 0%, rgba(15, 23, 42, 0.95) 100%);
+    z-index: 10;
+}
+
+/* Navbar - Slim & Floating */
+.navbar {
+    background: rgba(2, 6, 23, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 0.75rem 0;
+    /* Slimmer */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Glowing Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.85rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: white;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #1a1a1a 300%);
+    /* Subtle gradient */
+    background-color: var(--accent-color);
+    box-shadow: 0 0 20px -5px var(--accent-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px -5px var(--accent-glow);
+    filter: brightness(1.2);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-secondary);
+}
+
+/* Premium Input Fields */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(0, 0, 0, 0.3);
+    /* Darker input bg */
+    border: 1px solid var(--glass-border);
+    border-radius: 0.75rem;
+    color: #fff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    margin-bottom: 1.5rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Inner depth */
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    background: rgba(0, 0, 0, 0.5);
+    border-color: var(--accent-color);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 20px -5px var(--accent-glow);
+    /* Outer Glow */
+    transform: translateY(-1px);
+}
+
+label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    margin-left: 0.25rem;
+    display: block;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* Responsive */
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+}
+
+.status-open {
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border-color: rgba(16, 185, 129, 0.2);
+}
+
+.status-closed {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.status-upcoming {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Login Page Specifics */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding: 1rem;
+    /* Prevent edge touching on small screens */
+}
+
+/* Animated Background Mesh for Login */
+.login-container::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle at center, var(--accent-glow) 0%, transparent 60%);
+    opacity: 0.1;
+    animation: pulseGlow 8s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        opacity: 0.05;
+    }
+
+    100% {
+        transform: scale(1.1);
+        opacity: 0.15;
+    }
+}
+
+.login-card {
+    width: 100%;
+    max-width: 440px;
+    /* Standard Login Width */
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.8),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+    position: relative;
+    z-index: 1;
+    transition: max-width 0.3s ease;
+    /* Smooth resize */
+}
+
+.login-card-wide {
+    max-width: 700px;
+    /* Wider for Registration Grid */
+}
+
+/* Glowing Border Concept for Card */
+/* Removed confusing webkit-mask pseudo element */
+
+.role-selector {
+    display: flex;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.4rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 2rem;
+}
+
+.role-btn {
+    flex: 1;
+    text-align: center;
+    padding: 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+    /* Prepare for border */
+    background: transparent;
+}
+
+.role-btn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.role-btn.active {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.text-gradient {
+    /* Alternative to background-clip: text for better compatibility */
+    color: var(--accent-color);
+    text-shadow: 0 0 20px var(--accent-glow);
+    /* Optional: retain gradient if valid, but fallback to solid color */
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+/* Professional Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modal-content {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 550px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 1),
+        0 25px 50px -12px rgba(0, 0, 0, 0.8),
+        0 0 30px -10px var(--accent-glow);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Form Layout Utilities */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    /* Significantly increased spacing */
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    /* Space between label and input */
+    width: 100%;
+    /* Ensure it spans the grid cell */
+    min-width: 0;
+    /* Prevent flex/grid overflow issues */
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Compact form elements inside modal */
+.modal-content label {
+    font-size: 0.75rem;
+    margin: 0;
+    /* Handled by gap */
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.modal-content input,
+.modal-content select {
+    padding: 0.6rem 0.85rem;
+    /* Smaller, compact */
+    font-size: 0.9rem;
+    margin: 0;
+    /* Remove default margins, use gaps */
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 0.5rem;
+}
+
+.modal-content input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px var(--accent-glow);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
